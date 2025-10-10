@@ -95,7 +95,7 @@ export function CreditoHistorico({
   };
 
   const transacoesFiltradas = gerarTransacoes();
-  const getTipoColor = (tipoTransacao: string): 'error' | 'success' | 'warning' | 'default' => {
+  const getTipoColor = (tipoTransacao: string): 'error' | 'success' | 'warning' | 'info' => {
     switch (tipoTransacao) {
       case 'saque':
         return 'error';
@@ -104,24 +104,24 @@ export function CreditoHistorico({
       case 'juros':
         return 'warning';
       default:
-        return 'default';
+        return 'info';
     }
   };
 
   const getTipoIcon = (tipoTransacao: string) => {
     switch (tipoTransacao) {
       case 'saque':
-        return 'solar:logout-3-bold-duotone';
+        return 'solar:export-bold';
       case 'pagamento':
-        return 'solar:login-3-bold-duotone';
+        return 'solar:import-bold';
       case 'juros':
-        return 'solar:percentage-circle-bold-duotone';
+        return 'solar:wad-of-money-bold';
       default:
-        return 'solar:circle-bold-duotone';
+        return 'solar:info-circle-bold';
     }
   };
 
-  const getStatusColor = (statusTransacao: string): 'success' | 'warning' | 'info' | 'default' => {
+  const getStatusColor = (statusTransacao: string): 'success' | 'warning' | 'info' => {
     switch (statusTransacao) {
       case 'concluido':
         return 'success';
@@ -130,7 +130,7 @@ export function CreditoHistorico({
       case 'processando':
         return 'info';
       default:
-        return 'default';
+        return 'info';
     }
   };
 
