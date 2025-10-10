@@ -125,21 +125,21 @@ export function CreditoView() {
                 },
               }}
             >
-              <Tab
-                icon={<Iconify icon="eva:credit-card-fill" width={22} />}
-                iconPosition="start"
-                label="Linha de Crédito"
-              />
-              <Tab
-                icon={<Iconify icon="eva:home-fill" width={22} />}
-                iconPosition="start"
-                label="Imóvel Vinculado"
-              />
-              <Tab
-                icon={<Iconify icon="eva:swap-fill" width={22} />}
-                iconPosition="start"
-                label="Pagamento"
-              />
+            <Tab
+              icon={<Iconify icon="solar:card-bold" width={22} />}
+              iconPosition="start"
+              label="Linha de Crédito"
+            />
+            <Tab
+              icon={<Iconify icon="solar:home-smile-bold-duotone" width={22} />}
+              iconPosition="start"
+              label="Imóvel Vinculado"
+            />
+            <Tab
+              icon={<Iconify icon="solar:transfer-horizontal-bold" width={22} />}
+              iconPosition="start"
+              label="Pagamento"
+            />
             </Tabs>
           </Box>
 
