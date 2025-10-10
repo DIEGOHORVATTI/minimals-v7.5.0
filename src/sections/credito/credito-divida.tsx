@@ -39,30 +39,15 @@ export function CreditoDivida({
   const valorJaQuitado = parcelasPagas * valorParcela;
 
   return (
-    <Card sx={{ p: 4, position: 'relative', overflow: 'hidden', height: 'fit-content' }}>
-      {/* Background pattern */}
-      <Box
-        sx={(theme) => ({
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          width: 200,
-          height: 200,
-          opacity: 0.08,
-          background: `linear-gradient(135deg, ${theme.palette.error.main}, ${theme.palette.warning.main})`,
-          borderRadius: '50%',
-          transform: 'translate(50%, -50%)',
-        })}
-      />
-
-      <Stack spacing={3} sx={{ position: 'relative', zIndex: 1 }}>
+    <Card sx={{ p: 4, height: 'fit-content' }}>
+      <Stack spacing={3}>
         {/* Header */}
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Box>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
               Saldo devedor atual
             </Typography>
-            <Typography variant="h4" sx={{ fontWeight: 700, color: 'error.main' }}>
+            <Typography variant="h4" sx={{ fontWeight: 700, color: 'primary.main' }}>
               {fCurrencyBR(valorDivida)}
             </Typography>
             <Typography variant="caption" color="text.secondary">
@@ -73,8 +58,8 @@ export function CreditoDivida({
             sx={(theme) => ({
               p: 1.5,
               borderRadius: 2,
-              bgcolor: theme.palette.error.lighter,
-              color: theme.palette.error.main,
+              bgcolor: theme.palette.primary.lighter,
+              color: theme.palette.primary.main,
             })}
           >
             <Iconify icon="solar:bill-list-bold-duotone" width={32} />
@@ -96,13 +81,13 @@ export function CreditoDivida({
           sx={(theme) => ({
             p: 2.5,
             borderRadius: 2,
-            bgcolor: theme.palette.info.lighter,
-            border: `1px solid ${theme.palette.info.light}`,
+            bgcolor: theme.palette.primary.lighter,
+            border: `2px solid ${theme.palette.primary.light}`,
           })}
         >
           <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
-            <Iconify icon="solar:calendar-date-bold" width={20} color="info.main" />
-            <Typography variant="subtitle2" fontWeight={600}>
+            <Iconify icon="solar:calendar-date-bold" width={20} color="primary.main" />
+            <Typography variant="subtitle2" fontWeight={600} color="primary.darker">
               Plano Ativo: Pagamento {frequenciaAtual}
             </Typography>
           </Stack>
@@ -120,8 +105,7 @@ export function CreditoDivida({
           sx={(theme) => ({
             p: 3,
             borderRadius: 2,
-            bgcolor: theme.palette.grey[50],
-            border: `1px solid ${theme.palette.grey[200]}`,
+            border: `1px solid ${theme.palette.divider}`,
           })}
         >
           <Stack spacing={2.5}>
@@ -138,7 +122,7 @@ export function CreditoDivida({
               <Typography variant="body2" color="text.secondary">
                 Já quitado
               </Typography>
-              <Typography variant="body2" fontWeight={600} color="success.main">
+              <Typography variant="body2" fontWeight={600} color="primary.main">
                 {fCurrencyBR(valorJaQuitado)}
               </Typography>
             </Stack>
@@ -170,7 +154,7 @@ export function CreditoDivida({
                   bgcolor: 'grey.300',
                   '& .MuiLinearProgress-bar': {
                     borderRadius: 3,
-                    bgcolor: 'success.main',
+                    bgcolor: 'primary.main',
                   },
                 }}
               />

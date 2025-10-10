@@ -23,30 +23,15 @@ export function CreditoWallet({ limiteTotal, saldoDisponivel, saldoUtilizado }: 
   const percentualUsado = (saldoUtilizado / limiteTotal) * 100;
 
   return (
-    <Card sx={{ p: 4, position: 'relative', overflow: 'hidden' }}>
-      {/* Background pattern */}
-      <Box
-        sx={(theme) => ({
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          width: 250,
-          height: 250,
-          opacity: 0.08,
-          background: `linear-gradient(135deg, ${theme.palette.secondary.main}, ${theme.palette.primary.main})`,
-          borderRadius: '50%',
-          transform: 'translate(40%, -40%)',
-        })}
-      />
-
-      <Stack spacing={4} sx={{ position: 'relative', zIndex: 1 }}>
+    <Card sx={{ p: 4 }}>
+      <Stack spacing={4}>
         {/* Header com saldo disponível */}
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Box>
             <Typography variant="caption" color="text.secondary" sx={{ mb: 0.5, display: 'block' }}>
               Crédito total
             </Typography>
-            <Typography variant="h3" sx={{ fontWeight: 700, color: 'secondary.main' }}>
+            <Typography variant="h3" sx={{ fontWeight: 700, color: 'primary.main' }}>
               {fCurrencyBR(limiteTotal)}
             </Typography>
           </Box>
@@ -54,8 +39,8 @@ export function CreditoWallet({ limiteTotal, saldoDisponivel, saldoUtilizado }: 
             sx={(theme) => ({
               p: 2,
               borderRadius: 2,
-              bgcolor: theme.palette.secondary.lighter,
-              color: theme.palette.secondary.main,
+              bgcolor: theme.palette.primary.lighter,
+              color: theme.palette.primary.main,
             })}
           >
             <Iconify icon="solar:bill-list-bold-duotone" width={40} />
@@ -77,17 +62,16 @@ export function CreditoWallet({ limiteTotal, saldoDisponivel, saldoUtilizado }: 
             sx={(theme) => ({
               p: 2.5,
               borderRadius: 2,
-              bgcolor: theme.palette.success.lighter,
-              border: `1px solid ${theme.palette.success.light}`,
+              border: `2px solid ${theme.palette.divider}`,
             })}
           >
             <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
-              <Iconify icon="solar:check-circle-bold" width={18} color="success.main" />
-              <Typography variant="caption" color="success.dark" fontWeight={600}>
+              <Iconify icon="solar:check-circle-bold" width={18} color="primary.main" />
+              <Typography variant="caption" color="text.secondary" fontWeight={600}>
                 Disponível para saque
               </Typography>
             </Stack>
-            <Typography variant="h5" fontWeight={700} color="success.main">
+            <Typography variant="h5" fontWeight={700} color="primary.main">
               {fCurrencyBR(saldoDisponivel)}
             </Typography>
           </Box>
@@ -96,8 +80,7 @@ export function CreditoWallet({ limiteTotal, saldoDisponivel, saldoUtilizado }: 
             sx={(theme) => ({
               p: 2.5,
               borderRadius: 2,
-              bgcolor: theme.palette.grey[100],
-              border: `1px solid ${theme.palette.grey[300]}`,
+              border: `2px solid ${theme.palette.divider}`,
             })}
           >
             <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
@@ -131,7 +114,7 @@ export function CreditoWallet({ limiteTotal, saldoDisponivel, saldoUtilizado }: 
               bgcolor: 'grey.300',
               '& .MuiLinearProgress-bar': {
                 borderRadius: 4,
-                bgcolor: 'secondary.main',
+                bgcolor: 'primary.main',
               },
             }}
           />
@@ -141,7 +124,7 @@ export function CreditoWallet({ limiteTotal, saldoDisponivel, saldoUtilizado }: 
         <Button
           variant="contained"
           size="large"
-          color="secondary"
+          color="primary"
           fullWidth
           startIcon={<Iconify icon="solar:download-bold" />}
           disabled={saldoDisponivel <= 0}
