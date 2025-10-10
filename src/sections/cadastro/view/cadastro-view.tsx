@@ -88,73 +88,54 @@ export function CadastroView() {
       </Box>
 
       {/* Step Info */}
-      {hasMatricula ? (
-        // Layout com steps verticais espalhados horizontalmente quando selecionado
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
-          {(hasMatricula === 'sim' ? [
-            { num: 1, label: 'Pergunta Inicial', active: true },
-            { num: 2, label: 'Matrícula', active: false },
-            { num: 3, label: 'Crédito', active: false },
-            { num: 4, label: 'Finalização', active: false },
-          ] : [
-            { num: 1, label: 'Pergunta Inicial', active: true },
-            { num: 2, label: 'Endereço', active: false },
-            { num: 3, label: 'Crédito', active: false },
-            { num: 4, label: 'Perguntas Gerais', active: false },
-            { num: 5, label: 'Finalização', active: false },
-          ]).map((step) => (
-            <Box key={step.num} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: 'fit-content' }}>
-              <Box
-                sx={{
-                  width: 32,
-                  height: 32,
-                  borderRadius: '50%',
-                  bgcolor: step.active ? 'primary.main' : 'grey.300',
-                  color: step.active ? 'white' : 'text.secondary',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: 600,
-                  alignSelf: 'center',
-                }}
-              >
-                {step.num}
-              </Box>
-              <Typography 
-                variant="body2" 
-                fontWeight={step.active ? 600 : 400}
-                color={step.active ? 'primary.main' : 'text.secondary'}
-                sx={{ textAlign: 'center', width: '100%', mt: 0.5 }}
-              >
-                {step.label}
-              </Typography>
+      <Box sx={{ display: 'flex', justifyContent: hasMatricula ? 'space-between' : 'flex-start', alignItems: 'flex-start', width: '100%' }}>
+        {(hasMatricula === 'sim' ? [
+          { num: 1, label: 'Pergunta Inicial', active: true },
+          { num: 2, label: 'Matrícula', active: false },
+          { num: 3, label: 'Crédito', active: false },
+          { num: 4, label: 'Finalização', active: false },
+        ] : hasMatricula === 'nao' ? [
+          { num: 1, label: 'Pergunta Inicial', active: true },
+          { num: 2, label: 'Endereço', active: false },
+          { num: 3, label: 'Crédito', active: false },
+          { num: 4, label: 'Perguntas Gerais', active: false },
+          { num: 5, label: 'Finalização', active: false },
+        ] : [
+          { num: 1, label: 'Pergunta Inicial', active: true },
+        ]).map((step) => (
+          <Box key={step.num} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: 'fit-content' }}>
+            <Box
+              sx={{
+                width: 32,
+                height: 32,
+                borderRadius: '50%',
+                bgcolor: step.active ? 'primary.main' : 'grey.300',
+                color: step.active ? 'white' : 'text.secondary',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: 600,
+                alignSelf: 'center',
+              }}
+            >
+              {step.num}
             </Box>
-          ))}
-        </Box>
-      ) : (
-        // Layout simples quando não selecionado
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: 'fit-content' }}>
-          <Box
-            sx={{
-              width: 32,
-              height: 32,
-              borderRadius: '50%',
-              bgcolor: 'primary.main',
-              color: 'white',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontWeight: 600,
-              alignSelf: 'center',
-            }}
-          >
-            {stepData.step}
+            <Typography 
+              variant="body2" 
+              fontWeight={step.active ? 600 : 400}
+              color={step.active ? 'primary.main' : 'text.secondary'}
+              sx={{ 
+                textAlign: 'center', 
+                width: '100%', 
+                mt: 0.5,
+                display: { xs: 'none', sm: 'block' } // Oculta texto em mobile
+              }}
+            >
+              {step.label}
+            </Typography>
           </Box>
-          <Typography variant="h6" fontWeight={600} sx={{ textAlign: 'center', width: '100%' }}>
-            Pergunta Inicial
-          </Typography>
-        </Box>
-      )}
+        ))}
+      </Box>
     </Box>
   );
 
