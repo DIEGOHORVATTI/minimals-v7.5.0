@@ -118,9 +118,14 @@ export function CreditoView() {
                 label="Linha de Crédito"
               />
               <Tab
+                icon={<Iconify icon="solar:home-2-outline" width={24} />}
+                iconPosition="start"
+                label="Imóvel Vinculado"
+              />
+              <Tab
                 icon={<Iconify icon="solar:transfer-horizontal-bold-duotone" width={24} />}
                 iconPosition="start"
-                label="Dívida e Pagamentos"
+                label="Pagamento"
               />
             </Tabs>
           </Box>
@@ -142,29 +147,21 @@ export function CreditoView() {
               </Stack>
             )}
 
-            {/* Aba 2: Dívida e Pagamentos */}
+            {/* Aba 2: Imóvel Vinculado */}
             {abaAtual === 1 && (
-              <Stack spacing={4}>
-                {/* Card de Tokens do Imóvel */}
-                <CreditoTokensImovel
-                  valorDivida={valorDivida}
-                  valorOriginalCredito={valorOriginalDivida}
-                  percentualTokens={percentualTokensVinculados}
-                  valorImovel={valorImovel}
-                  enderecoImovel={enderecoImovel}
-                />
+              <CreditoTokensImovel
+                valorDivida={valorDivida}
+                valorOriginalCredito={valorOriginalDivida}
+                percentualTokens={percentualTokensVinculados}
+                valorImovel={valorImovel}
+                enderecoImovel={enderecoImovel}
+              />
+            )}
 
-                {/* Cards de Dívida e Plano de Pagamento */}
-                <Box
-                  sx={{
-                    display: 'grid',
-                    gap: 4,
-                    gridTemplateColumns: {
-                      xs: '1fr',
-                      lg: '1fr 1fr',
-                    },
-                  }}
-                >
+            {/* Aba 3: Pagamento */}
+            {abaAtual === 2 && (
+              <Stack spacing={4}>
+                {/* Card de Dívida */}
                 <CreditoDivida
                   valorDivida={valorDivida}
                   valorParcela={valorParcela}
@@ -174,16 +171,17 @@ export function CreditoView() {
                   frequenciaAtual={frequenciaAtual}
                   valorTotalComJuros={valorTotalComJuros}
                 />
-                  <CreditoPlanoPagamento
-                    valorDivida={valorDivida}
-                    valorParcela={valorParcela}
-                    parcelasPagas={parcelasPagas}
-                    totalParcelas={totalParcelas}
-                    proximoVencimento={proximoVencimento}
-                    dataInicioDivida={dataInicioParcelas}
-                    intervaloDiasOriginal={intervaloDias}
-                  />
-                </Box>
+
+                {/* Plano de Pagamento */}
+                <CreditoPlanoPagamento
+                  valorDivida={valorDivida}
+                  valorParcela={valorParcela}
+                  parcelasPagas={parcelasPagas}
+                  totalParcelas={totalParcelas}
+                  proximoVencimento={proximoVencimento}
+                  dataInicioDivida={dataInicioParcelas}
+                  intervaloDiasOriginal={intervaloDias}
+                />
 
                 {/* Histórico de Pagamentos */}
                 <CreditoHistorico 
