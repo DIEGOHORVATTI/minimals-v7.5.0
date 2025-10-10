@@ -2,7 +2,9 @@
 
 import { useState } from 'react';
 import { m } from 'framer-motion';
-import { Alert, Box, Button, Card, Container, FormControlLabel, Radio, RadioGroup, Stack, Typography } from '@mui/material';
+
+import { Box, Card, Alert, Radio, Stack, Button, Container, RadioGroup, Typography, FormControlLabel } from '@mui/material';
+
 import { Iconify } from 'src/components/iconify';
 // import { varFade } from 'src/components/animate/variants';
 
@@ -163,7 +165,7 @@ export function CadastroView() {
           {/* Banner explicativo */}
           <Alert
             severity="success"
-            icon={<Iconify icon="eva:file-text-fill" />}
+            icon={<Iconify icon="eva:star-fill" />}
             sx={{
               bgcolor: 'primary.lighter',
               color: 'primary.darker',
