@@ -1,23 +1,24 @@
 'use client';
 
 import { useState } from 'react';
-import { fCurrencyBR, fDateBR } from 'src/utils/format-br';
 
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
+import Card from '@mui/material/Card';
 import Chip from '@mui/material/Chip';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Divider from '@mui/material/Divider';
+import Stack from '@mui/material/Stack';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Typography from '@mui/material/Typography';
+
+import { fCurrencyBR, fDateBR } from 'src/utils/format-br';
 
 import { Iconify } from 'src/components/iconify';
 
@@ -64,13 +65,6 @@ const configuracoes = {
   },
 };
 
-type ParcelasPagasInfo = {
-  parcelasPagas: number;
-  totalParcelas: number;
-  dataInicio: Date;
-  intervaloDias: number;
-};
-
 export function CreditoPlanoPagamento({
   valorDivida,
   valorParcela,
@@ -92,7 +86,7 @@ export function CreditoPlanoPagamento({
   const diasJaDecorridos = Math.floor((hoje.getTime() - dataInicioDivida.getTime()) / (1000 * 60 * 60 * 24));
   const diasRestantesAteAno = Math.floor((dataFinalContrato.getTime() - hoje.getTime()) / (1000 * 60 * 60 * 24));
   const diasRestantes = Math.max(30, diasRestantesAteAno); // Mínimo 30 dias
-  const mesesRestantes = Math.floor(diasRestantes / 30);
+  const mesesRestantesTotal = Math.floor(diasRestantes / 30);
   
   // Calcular parcelas que cabem no período restante
   const calcularParcelasRestantes = () => {
@@ -278,7 +272,7 @@ export function CreditoPlanoPagamento({
               Simulador de Renegociação
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Período restante: {mesesRestantes} meses ({diasRestantes} dias)
+              Período restante: {mesesRestantesTotal} meses ({diasRestantes} dias)
             </Typography>
           </Box>
           <Iconify icon="solar:calculator-bold-duotone" width={24} />

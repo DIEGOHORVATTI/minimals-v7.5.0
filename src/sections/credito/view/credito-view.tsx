@@ -3,19 +3,19 @@
 import { useState } from 'react';
 
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Stack from '@mui/material/Stack';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
-import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
 
 import { Iconify } from 'src/components/iconify';
 
-import { CreditoWallet } from '../credito-wallet';
 import { CreditoDivida } from '../credito-divida';
 import { CreditoHistorico } from '../credito-historico';
 import { CreditoPlanoPagamento } from '../credito-plano-pagamento';
 import { CreditoTokensImovel } from '../credito-tokens-imovel';
+import { CreditoWallet } from '../credito-wallet';
 
 // ----------------------------------------------------------------------
 
@@ -43,7 +43,6 @@ export function CreditoView() {
   
   // Configuração do parcelamento (PERÍODO FIXO: 1 ANO)
   const frequenciaAtual: 'semanal' | 'mensal' | 'trimestral' | 'semestral' = 'mensal';
-  const prazoTotalDias = 365; // 1 ano
   
   // Parcelas baseadas na frequência escolhida
   const configParcelas = {

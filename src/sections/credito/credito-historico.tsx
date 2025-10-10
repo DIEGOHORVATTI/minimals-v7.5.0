@@ -1,13 +1,13 @@
 'use client';
 
-import { fCurrencyBR, fDateTimeBR } from 'src/utils/format-br';
-
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
+import Chip from '@mui/material/Chip';
+import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import Chip from '@mui/material/Chip';
+
+import { fCurrencyBR, fDateTimeBR } from 'src/utils/format-br';
 
 import { Iconify } from 'src/components/iconify';
 
@@ -95,8 +95,8 @@ export function CreditoHistorico({
   };
 
   const transacoesFiltradas = gerarTransacoes();
-  const getTipoColor = (tipo: string): 'error' | 'success' | 'warning' | 'default' => {
-    switch (tipo) {
+  const getTipoColor = (tipoTransacao: string): 'error' | 'success' | 'warning' | 'default' => {
+    switch (tipoTransacao) {
       case 'saque':
         return 'error';
       case 'pagamento':
@@ -108,8 +108,8 @@ export function CreditoHistorico({
     }
   };
 
-  const getTipoIcon = (tipo: string) => {
-    switch (tipo) {
+  const getTipoIcon = (tipoTransacao: string) => {
+    switch (tipoTransacao) {
       case 'saque':
         return 'solar:logout-3-bold-duotone';
       case 'pagamento':
@@ -121,8 +121,8 @@ export function CreditoHistorico({
     }
   };
 
-  const getStatusColor = (status: string): 'success' | 'warning' | 'info' | 'default' => {
-    switch (status) {
+  const getStatusColor = (statusTransacao: string): 'success' | 'warning' | 'info' | 'default' => {
+    switch (statusTransacao) {
       case 'concluido':
         return 'success';
       case 'pendente':

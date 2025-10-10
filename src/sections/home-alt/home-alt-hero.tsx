@@ -3,11 +3,11 @@ import type { BoxProps } from '@mui/material/Box';
 import { m } from 'framer-motion';
 
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
 
 import { MotionContainer } from 'src/components/animate';
+
 import { HeroBackground } from 'src/sections/home/components/hero-background';
 
 // ----------------------------------------------------------------------
@@ -35,9 +35,7 @@ export function HomeAltHero({ sx, ...other }: BoxProps) {
         <Box component="span" sx={{ width: 1, opacity: 0.24 }}>
           Crédito rápido e flexível com
         </Box>
-        <Box component="span" sx={(theme) => ({ px: 1 })}>
-          
-        </Box>
+        <Box component="span" sx={(theme) => ({ px: 1 })} />
         <Box component="span" sx={(theme) => ({ color: theme.vars.palette.secondary.light })}>
           Disponebla
         </Box>

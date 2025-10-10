@@ -1,12 +1,12 @@
 'use client';
 
-import { fCurrency } from 'src/utils/format-number';
-
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
+import LinearProgress from '@mui/material/LinearProgress';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import LinearProgress from '@mui/material/LinearProgress';
+
+import { fCurrency } from 'src/utils/format-number';
 
 import { Iconify } from 'src/components/iconify';
 
