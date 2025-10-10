@@ -161,27 +161,37 @@ export function CreditoView() {
             {/* Aba 3: Pagamento */}
             {abaAtual === 2 && (
               <Stack spacing={4}>
-                {/* Card de Dívida */}
-                <CreditoDivida
-                  valorDivida={valorDivida}
-                  valorParcela={valorParcela}
-                  parcelasPagas={parcelasPagas}
-                  totalParcelas={totalParcelas}
-                  proximoVencimento={proximoVencimento}
-                  frequenciaAtual={frequenciaAtual}
-                  valorTotalComJuros={valorTotalComJuros}
-                />
+                {/* Cards de Dívida e Plano de Pagamento lado a lado */}
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gap: 4,
+                    gridTemplateColumns: {
+                      xs: '1fr',
+                      lg: '1fr 1fr',
+                    },
+                  }}
+                >
+                  <CreditoDivida
+                    valorDivida={valorDivida}
+                    valorParcela={valorParcela}
+                    parcelasPagas={parcelasPagas}
+                    totalParcelas={totalParcelas}
+                    proximoVencimento={proximoVencimento}
+                    frequenciaAtual={frequenciaAtual}
+                    valorTotalComJuros={valorTotalComJuros}
+                  />
 
-                {/* Plano de Pagamento */}
-                <CreditoPlanoPagamento
-                  valorDivida={valorDivida}
-                  valorParcela={valorParcela}
-                  parcelasPagas={parcelasPagas}
-                  totalParcelas={totalParcelas}
-                  proximoVencimento={proximoVencimento}
-                  dataInicioDivida={dataInicioParcelas}
-                  intervaloDiasOriginal={intervaloDias}
-                />
+                  <CreditoPlanoPagamento
+                    valorDivida={valorDivida}
+                    valorParcela={valorParcela}
+                    parcelasPagas={parcelasPagas}
+                    totalParcelas={totalParcelas}
+                    proximoVencimento={proximoVencimento}
+                    dataInicioDivida={dataInicioParcelas}
+                    intervaloDiasOriginal={intervaloDias}
+                  />
+                </Box>
 
                 {/* Histórico de Pagamentos */}
                 <CreditoHistorico 
