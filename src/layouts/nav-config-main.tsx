@@ -12,6 +12,7 @@ export const navData: NavMainProps['data'] = [
   { title: 'Home', path: '/', icon: <Iconify width={22} icon="solar:home-angle-bold-duotone" /> },
   { title: 'Home Alt', path: paths.homeAlt, icon: <Iconify width={22} icon="solar:settings-bold-duotone" /> },
   { title: 'Crédito', path: paths.credito, icon: <Iconify width={22} icon="solar:bill-list-bold-duotone" /> },
+  { title: 'Cadastro', path: paths.cadastro, icon: <Iconify width={22} icon="solar:user-plus-bold" /> },
   {
     title: 'Components',
     path: paths.components,

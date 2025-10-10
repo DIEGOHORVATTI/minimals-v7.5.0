@@ -110,25 +110,33 @@ export function CreditoView() {
                   textTransform: 'none',
                   minHeight: { xs: 56, md: 64 },
                   padding: { xs: '8px 12px', md: '12px 16px' },
+                  color: 'text.secondary',
+                  '&.Mui-selected': {
+                    color: 'primary.main',
+                  },
                 },
                 '& .MuiTab-iconWrapper': {
                   marginRight: { xs: '4px', md: '8px' },
                   marginBottom: '0 !important',
+                  color: 'inherit',
+                },
+                '& .MuiTabs-indicator': {
+                  backgroundColor: 'primary.main',
                 },
               }}
             >
               <Tab
-                icon={<Iconify icon="solar:bill-list-bold-duotone" width={22} />}
+                icon={<Iconify icon="eva:credit-card-fill" width={22} />}
                 iconPosition="start"
                 label="Linha de Crédito"
               />
               <Tab
-                icon={<Iconify icon="solar:home-2-outline" width={22} />}
+                icon={<Iconify icon="eva:home-fill" width={22} />}
                 iconPosition="start"
                 label="Imóvel Vinculado"
               />
               <Tab
-                icon={<Iconify icon="solar:transfer-horizontal-bold-duotone" width={22} />}
+                icon={<Iconify icon="eva:swap-fill" width={22} />}
                 iconPosition="start"
                 label="Pagamento"
               />

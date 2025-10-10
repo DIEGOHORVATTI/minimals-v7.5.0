@@ -20,6 +20,8 @@ export const paths = {
   homeAlt: '/home-alt',
   // Credit line
   credito: '/credito',
+  // Registration
+  cadastro: '/cadastro',
   comingSoon: '/coming-soon',
   maintenance: '/maintenance',
   pricing: '/pricing',
