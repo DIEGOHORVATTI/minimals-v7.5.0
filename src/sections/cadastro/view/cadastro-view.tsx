@@ -165,7 +165,7 @@ export function CadastroView() {
           {/* Banner explicativo */}
           <Alert
             severity="success"
-            icon={<Iconify icon="eva:star-fill" />}
+            icon={<Iconify icon="solar:file-text-bold" />}
             sx={{
               bgcolor: 'primary.lighter',
               color: 'primary.darker',
