@@ -118,17 +118,17 @@ export function CreditoView() {
               }}
             >
               <Tab
-                icon={<Iconify icon="solar:bill-list-bold-duotone" width={{ xs: 20, md: 24 }} />}
+                icon={<Iconify icon="solar:bill-list-bold-duotone" width={22} />}
                 iconPosition="start"
                 label="Linha de Crédito"
               />
               <Tab
-                icon={<Iconify icon="solar:home-2-outline" width={{ xs: 20, md: 24 }} />}
+                icon={<Iconify icon="solar:home-2-outline" width={22} />}
                 iconPosition="start"
                 label="Imóvel Vinculado"
               />
               <Tab
-                icon={<Iconify icon="solar:transfer-horizontal-bold-duotone" width={{ xs: 20, md: 24 }} />}
+                icon={<Iconify icon="solar:transfer-horizontal-bold-duotone" width={22} />}
                 iconPosition="start"
                 label="Pagamento"
               />
