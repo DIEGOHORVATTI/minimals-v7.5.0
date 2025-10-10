@@ -3,19 +3,19 @@
 import { useState } from 'react';
 
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Stack from '@mui/material/Stack';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
+import Stack from '@mui/material/Stack';
+import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
 import { Iconify } from 'src/components/iconify';
 
 import { CreditoDivida } from '../credito-divida';
-import { CreditoHistorico } from '../credito-historico';
-import { CreditoPlanoPagamento } from '../credito-plano-pagamento';
-import { CreditoTokensImovel } from '../credito-tokens-imovel';
 import { CreditoWallet } from '../credito-wallet';
+import { CreditoHistorico } from '../credito-historico';
+import { CreditoTokensImovel } from '../credito-tokens-imovel';
+import { CreditoPlanoPagamento } from '../credito-plano-pagamento';
 
 // ----------------------------------------------------------------------
 

@@ -3,8 +3,8 @@ import type { BoxProps } from '@mui/material/Box';
 import { m } from 'framer-motion';
 
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
+import Container from '@mui/material/Container';
 
 import { MotionContainer } from 'src/components/animate';
 
