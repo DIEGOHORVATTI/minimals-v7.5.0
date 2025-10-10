@@ -10,8 +10,8 @@ import { Iconify } from 'src/components/iconify';
 
 export const navData: NavMainProps['data'] = [
   { title: 'Home', path: '/', icon: <Iconify width={22} icon="solar:home-angle-bold-duotone" /> },
-  { title: 'Home Alt', path: paths.homeAlt, icon: <Iconify width={22} icon="solar:home-2-bold-duotone" /> },
-  { title: 'Crédito', path: paths.credito, icon: <Iconify width={22} icon="solar:card-bold-duotone" /> },
+  { title: 'Home Alt', path: paths.homeAlt, icon: <Iconify width={22} icon="solar:home-smile-bold-duotone" /> },
+  { title: 'Crédito', path: paths.credito, icon: <Iconify width={22} icon="solar:wallet-bold-duotone" /> },
   {
     title: 'Components',
     path: paths.components,
