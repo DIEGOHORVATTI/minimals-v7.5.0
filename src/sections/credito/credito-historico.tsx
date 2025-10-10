@@ -152,7 +152,7 @@ export function CreditoHistorico({
               {subtitulo}
             </Typography>
           </Box>
-          <Iconify icon="solar:history-3-bold-duotone" width={24} />
+          <Iconify icon="solar:clock-circle-bold" width={24} />
         </Stack>
 
         <Divider />

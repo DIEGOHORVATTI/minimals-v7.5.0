@@ -107,7 +107,7 @@ export function CreditoSimulacao({ saldoAtual }: CreditoSimulacaoProps) {
               Escolha como deseja pagar sua dívida
             </Typography>
           </Box>
-          <Iconify icon="solar:calculator-bold-duotone" width={24} />
+          <Iconify icon="solar:palette-bold" width={24} />
         </Stack>
 
         <Divider />
@@ -248,7 +248,7 @@ export function CreditoSimulacao({ saldoAtual }: CreditoSimulacaoProps) {
           variant="contained"
           size="large"
           fullWidth
-          startIcon={<Iconify icon="solar:check-circle-bold-duotone" />}
+          startIcon={<Iconify icon="solar:check-circle-bold" />}
           sx={{ mt: 2 }}
         >
           Confirmar Plano de Pagamento

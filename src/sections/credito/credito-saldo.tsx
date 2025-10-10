@@ -57,7 +57,7 @@ export function CreditoSaldo({ saldoAtual, saldoDisponivel }: CreditoSaldoProps)
               color: theme.palette.primary.main,
             })}
           >
-            <Iconify icon="solar:card-bold-duotone" width={32} />
+            <Iconify icon="solar:bill-list-bold-duotone" width={32} />
           </Box>
         </Stack>
 

@@ -113,12 +113,12 @@ export function CreditoView() {
               }}
             >
               <Tab
-                icon={<Iconify icon="solar:wallet-bold-duotone" width={24} />}
+                icon={<Iconify icon="solar:bill-list-bold-duotone" width={24} />}
                 iconPosition="start"
                 label="Linha de Crédito"
               />
               <Tab
-                icon={<Iconify icon="solar:card-transfer-bold-duotone" width={24} />}
+                icon={<Iconify icon="solar:transfer-horizontal-bold-duotone" width={24} />}
                 iconPosition="start"
                 label="Dívida e Pagamentos"
               />

@@ -92,12 +92,12 @@ export function CreditoTokensImovel({
               color: theme.palette.primary.main,
             })}
           >
-            <Iconify icon="solar:home-2-bold-duotone" width={32} />
+            <Iconify icon="solar:home-2-outline" width={32} />
           </Box>
         </Stack>
 
         {/* Alerta informativo */}
-        <Alert severity="info" icon={<Iconify icon="solar:info-circle-bold-duotone" />}>
+        <Alert severity="info" icon={<Iconify icon="solar:info-circle-bold" />}>
           <Typography variant="caption">
             <strong>{percentualTokens}% dos tokens</strong> deste imóvel foram vinculados como garantia da sua dívida.  
             <strong>{tokensRestantes.toFixed(2).replace('.', ',')}%</strong> ainda estão vinculados.  
@@ -191,7 +191,7 @@ export function CreditoTokensImovel({
             })}
           >
             <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
-              <Iconify icon="solar:check-circle-bold-duotone" width={20} color="success.main" />
+              <Iconify icon="solar:check-circle-bold" width={20} color="success.main" />
               <Typography variant="caption" color="success.dark" fontWeight={600}>
                 Tokens liberados
               </Typography>
@@ -213,7 +213,7 @@ export function CreditoTokensImovel({
             })}
           >
             <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
-              <Iconify icon="solar:lock-bold-duotone" width={20} color="warning.main" />
+              <Iconify icon="solar:lock-password-outline" width={20} color="warning.main" />
               <Typography variant="caption" color="warning.dark" fontWeight={600}>
                 Tokens vinculados
               </Typography>
@@ -237,7 +237,7 @@ export function CreditoTokensImovel({
           })}
         >
           <Stack direction="row" spacing={1.5}>
-            <Iconify icon="solar:lightbulb-bolt-bold-duotone" width={24} color="primary.main" />
+            <Iconify icon="solar:info-circle-bold" width={24} color="primary.main" />
             <Box>
               <Typography variant="caption" fontWeight={600} sx={{ display: 'block', mb: 0.5 }}>
                 Como funciona?

@@ -84,7 +84,7 @@ export function CreditoDivida({
         {/* Alerta de próximo vencimento */}
         <Alert
           severity={diasParaVencimento <= 3 ? 'error' : 'warning'}
-          icon={<Iconify icon="solar:clock-circle-bold-duotone" />}
+          icon={<Iconify icon="solar:clock-circle-bold" />}
         >
           <Typography variant="caption" fontWeight={600}>
             Próximo vencimento: {fDateBR(proximoVencimento)} ({diasParaVencimento} dias)
@@ -101,7 +101,7 @@ export function CreditoDivida({
           })}
         >
           <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
-            <Iconify icon="solar:calendar-mark-bold-duotone" width={20} color="info.main" />
+            <Iconify icon="solar:calendar-date-bold" width={20} color="info.main" />
             <Typography variant="subtitle2" fontWeight={600}>
               Plano Ativo: Pagamento {frequenciaAtual}
             </Typography>
@@ -193,7 +193,7 @@ export function CreditoDivida({
           size="large"
           color="primary"
           fullWidth
-          startIcon={<Iconify icon="solar:card-transfer-bold-duotone" />}
+          startIcon={<Iconify icon="solar:transfer-horizontal-bold-duotone" />}
         >
           Pagar parcela atual
         </Button>

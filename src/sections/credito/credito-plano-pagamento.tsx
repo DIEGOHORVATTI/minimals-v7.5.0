@@ -275,7 +275,7 @@ export function CreditoPlanoPagamento({
               Período restante: {mesesRestantesTotal} meses ({diasRestantes} dias)
             </Typography>
           </Box>
-          <Iconify icon="solar:calculator-bold-duotone" width={24} />
+          <Iconify icon="solar:palette-bold" width={24} />
         </Stack>
 
         <Divider />
@@ -422,7 +422,7 @@ export function CreditoPlanoPagamento({
           variant="outlined"
           size="large"
           fullWidth
-          startIcon={<Iconify icon="solar:refresh-bold-duotone" />}
+          startIcon={<Iconify icon="solar:restart-bold" />}
         >
           Alterar plano de pagamento
         </Button>

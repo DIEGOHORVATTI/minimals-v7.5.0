@@ -58,7 +58,7 @@ export function CreditoWallet({ limiteTotal, saldoDisponivel, saldoUtilizado }: 
               color: theme.palette.secondary.main,
             })}
           >
-            <Iconify icon="solar:wallet-bold-duotone" width={40} />
+            <Iconify icon="solar:bill-list-bold-duotone" width={40} />
           </Box>
         </Stack>
 
@@ -82,7 +82,7 @@ export function CreditoWallet({ limiteTotal, saldoDisponivel, saldoUtilizado }: 
             })}
           >
             <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
-              <Iconify icon="solar:check-circle-bold-duotone" width={18} color="success.main" />
+              <Iconify icon="solar:check-circle-bold" width={18} color="success.main" />
               <Typography variant="caption" color="success.dark" fontWeight={600}>
                 Disponível para saque
               </Typography>
@@ -101,7 +101,7 @@ export function CreditoWallet({ limiteTotal, saldoDisponivel, saldoUtilizado }: 
             })}
           >
             <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
-              <Iconify icon="solar:download-minimalistic-bold-duotone" width={18} color="text.secondary" />
+              <Iconify icon="solar:download-bold" width={18} color="text.secondary" />
               <Typography variant="caption" color="text.secondary" fontWeight={600}>
                 Já sacado
               </Typography>
@@ -143,7 +143,7 @@ export function CreditoWallet({ limiteTotal, saldoDisponivel, saldoUtilizado }: 
           size="large"
           color="secondary"
           fullWidth
-          startIcon={<Iconify icon="solar:download-bold-duotone" />}
+          startIcon={<Iconify icon="solar:download-bold" />}
           disabled={saldoDisponivel <= 0}
         >
           {saldoDisponivel > 0 ? 'Sacar agora' : 'Sem saldo disponível'}
