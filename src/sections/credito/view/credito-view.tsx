@@ -105,25 +105,30 @@ export function CreditoView() {
               variant="fullWidth"
               sx={{
                 '& .MuiTab-root': {
-                  fontSize: '1rem',
+                  fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' },
                   fontWeight: 600,
                   textTransform: 'none',
-                  minHeight: 64,
+                  minHeight: { xs: 56, md: 64 },
+                  padding: { xs: '8px 12px', md: '12px 16px' },
+                },
+                '& .MuiTab-iconWrapper': {
+                  marginRight: { xs: '4px', md: '8px' },
+                  marginBottom: '0 !important',
                 },
               }}
             >
               <Tab
-                icon={<Iconify icon="solar:bill-list-bold-duotone" width={24} />}
+                icon={<Iconify icon="solar:bill-list-bold-duotone" width={{ xs: 20, md: 24 }} />}
                 iconPosition="start"
                 label="Linha de Crédito"
               />
               <Tab
-                icon={<Iconify icon="solar:home-2-outline" width={24} />}
+                icon={<Iconify icon="solar:home-2-outline" width={{ xs: 20, md: 24 }} />}
                 iconPosition="start"
                 label="Imóvel Vinculado"
               />
               <Tab
-                icon={<Iconify icon="solar:transfer-horizontal-bold-duotone" width={24} />}
+                icon={<Iconify icon="solar:transfer-horizontal-bold-duotone" width={{ xs: 20, md: 24 }} />}
                 iconPosition="start"
                 label="Pagamento"
               />
