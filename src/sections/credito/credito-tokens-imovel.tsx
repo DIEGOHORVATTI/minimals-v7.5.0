@@ -43,29 +43,8 @@ export function CreditoTokensImovel({
   const tokensRestantes = percentualTokens - tokensQuitados;
 
   return (
-    <Card 
-      sx={{ 
-        p: 4, 
-        position: 'relative', 
-        overflow: 'hidden',
-        background: (theme) => `linear-gradient(135deg, ${theme.palette.background.paper} 0%, ${theme.palette.primary.lighter} 100%)`,
-      }}
-    >
-      {/* Background pattern */}
-      <Box
-        sx={(theme) => ({
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          width: 300,
-          height: 300,
-          opacity: 0.05,
-          background: `radial-gradient(circle, ${theme.palette.primary.main}, transparent)`,
-          transform: 'translate(30%, -30%)',
-        })}
-      />
-
-      <Stack spacing={3} sx={{ position: 'relative', zIndex: 1 }}>
+    <Card sx={{ p: 4 }}>
+      <Stack spacing={3}>
         {/* Header */}
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Box>
@@ -186,17 +165,16 @@ export function CreditoTokensImovel({
             sx={(theme) => ({
               p: 2,
               borderRadius: 2,
-              bgcolor: theme.palette.success.lighter,
-              border: `1px solid ${theme.palette.success.light}`,
+              border: `2px solid ${theme.palette.divider}`,
             })}
           >
             <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
-              <Iconify icon="solar:check-circle-bold" width={20} color="success.main" />
-              <Typography variant="caption" color="success.dark" fontWeight={600}>
+              <Iconify icon="solar:check-circle-bold" width={20} color="primary.main" />
+              <Typography variant="caption" color="text.secondary" fontWeight={600}>
                 Tokens liberados
               </Typography>
             </Stack>
-            <Typography variant="h6" fontWeight={700} color="success.main">
+            <Typography variant="h6" fontWeight={700} color="primary.main">
               {tokensQuitados.toFixed(2).replace('.', ',')}%
             </Typography>
             <Typography variant="caption" color="text.secondary">
@@ -208,17 +186,16 @@ export function CreditoTokensImovel({
             sx={(theme) => ({
               p: 2,
               borderRadius: 2,
-              bgcolor: theme.palette.warning.lighter,
-              border: `1px solid ${theme.palette.warning.light}`,
+              border: `2px solid ${theme.palette.divider}`,
             })}
           >
             <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
-              <Iconify icon="solar:lock-password-outline" width={20} color="warning.main" />
-              <Typography variant="caption" color="warning.dark" fontWeight={600}>
+              <Iconify icon="solar:lock-password-outline" width={20} color="text.secondary" />
+              <Typography variant="caption" color="text.secondary" fontWeight={600}>
                 Tokens vinculados
               </Typography>
             </Stack>
-            <Typography variant="h6" fontWeight={700} color="warning.main">
+            <Typography variant="h6" fontWeight={700}>
               {tokensRestantes.toFixed(2).replace('.', ',')}%
             </Typography>
             <Typography variant="caption" color="text.secondary">
@@ -232,7 +209,6 @@ export function CreditoTokensImovel({
           sx={(theme) => ({
             p: 2,
             borderRadius: 2,
-            bgcolor: theme.palette.grey[50],
             border: `1px dashed ${theme.palette.divider}`,
           })}
         >
