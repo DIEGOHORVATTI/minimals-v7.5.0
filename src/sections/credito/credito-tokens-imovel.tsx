@@ -114,37 +114,31 @@ export function CreditoTokensImovel({
           </Stack>
         </Box>
 
-        {/* Progresso de quitação */}
+        {/* Progresso de liberação */}
         <Box>
-          <Stack direction="row" justifyContent="space-between" sx={{ mb: 1 }}>
-            <Typography variant="body2" fontWeight={600}>
-              Progresso de liberação dos tokens
-            </Typography>
-            <Typography variant="body2" fontWeight={600} color="success.main">
-              {percentualQuitado.toFixed(1).replace('.', ',')}% liberado
-            </Typography>
-          </Stack>
+          <Typography variant="body2" fontWeight={600} sx={{ mb: 1 }}>
+            Progresso de liberação dos tokens
+          </Typography>
 
           <LinearProgress
             variant="determinate"
-            value={percentualQuitado}
+            value={(tokensQuitados / percentualTokens) * 100}
             sx={{
               height: 10,
               borderRadius: 5,
               bgcolor: 'grey.300',
               '& .MuiLinearProgress-bar': {
                 borderRadius: 5,
-                background: (theme) => 
-                  `linear-gradient(90deg, ${theme.palette.success.main} 0%, ${theme.palette.success.light} 100%)`,
+                bgcolor: 'primary.main',
               },
             }}
           />
 
           <Stack direction="row" justifyContent="space-between" sx={{ mt: 1 }}>
-            <Typography variant="caption" color="success.main">
+            <Typography variant="caption" color="primary.main">
               {tokensQuitados.toFixed(2).replace('.', ',')}% liberados
             </Typography>
-            <Typography variant="caption" color="warning.main">
+            <Typography variant="caption" color="text.secondary">
               {tokensRestantes.toFixed(2).replace('.', ',')}% vinculados
             </Typography>
           </Stack>
@@ -174,8 +168,11 @@ export function CreditoTokensImovel({
                 Tokens liberados
               </Typography>
             </Stack>
-            <Typography variant="h6" fontWeight={700} color="primary.main">
-              {tokensQuitados.toFixed(2).replace('.', ',')}%
+            <Typography variant="h6" fontWeight={700} color="primary.main" component="div">
+              {tokensQuitados.toFixed(2).replace('.', ',')}%{' '}
+              <Typography component="span" variant="caption" color="text.secondary" sx={{ fontSize: '0.75rem' }}>
+                do imóvel
+              </Typography>
             </Typography>
             <Typography variant="caption" color="text.secondary">
               {fCurrencyBR((valorImovel * tokensQuitados) / 100)}
@@ -195,8 +192,11 @@ export function CreditoTokensImovel({
                 Tokens vinculados
               </Typography>
             </Stack>
-            <Typography variant="h6" fontWeight={700}>
-              {tokensRestantes.toFixed(2).replace('.', ',')}%
+            <Typography variant="h6" fontWeight={700} component="div">
+              {tokensRestantes.toFixed(2).replace('.', ',')}%{' '}
+              <Typography component="span" variant="caption" color="text.secondary" sx={{ fontSize: '0.75rem' }}>
+                do imóvel
+              </Typography>
             </Typography>
             <Typography variant="caption" color="text.secondary">
               {fCurrencyBR((valorImovel * tokensRestantes) / 100)}
