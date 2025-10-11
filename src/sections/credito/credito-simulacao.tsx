@@ -117,8 +117,13 @@ export function CreditoSimulacao({ saldoAtual }: CreditoSimulacaoProps) {
           sx={(theme) => ({
             p: 2,
             borderRadius: 2,
-            bgcolor: theme.palette.grey[50],
-            border: `1px solid ${theme.palette.grey[200]}`,
+            bgcolor: 'grey.50',
+            border: `1px solid`,
+            borderColor: 'grey.200',
+            ...theme.applyStyles('dark', {
+              bgcolor: 'grey.800',
+              borderColor: 'grey.700',
+            }),
           })}
         >
           <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
@@ -142,10 +147,13 @@ export function CreditoSimulacao({ saldoAtual }: CreditoSimulacaoProps) {
                   sx={(theme) => ({
                     p: 2,
                     borderRadius: 2,
-                    border: `1px solid ${
-                      planoSelecionado === plano.id ? theme.palette.primary.main : theme.palette.grey[200]
-                    }`,
-                    bgcolor: planoSelecionado === plano.id ? theme.palette.primary.lighter : 'transparent',
+                    border: `1px solid`,
+                    borderColor: planoSelecionado === plano.id ? 'primary.main' : 'grey.200',
+                    bgcolor: planoSelecionado === plano.id ? 'primary.lighter' : 'transparent',
+                    ...theme.applyStyles('dark', {
+                      borderColor: planoSelecionado === plano.id ? 'primary.main' : 'grey.700',
+                      bgcolor: planoSelecionado === plano.id ? 'primary.darker' : 'transparent',
+                    }),
                     transition: 'all 0.2s ease',
                     cursor: 'pointer',
                   })}
@@ -190,8 +198,13 @@ export function CreditoSimulacao({ saldoAtual }: CreditoSimulacaoProps) {
             sx={(theme) => ({
               p: 3,
               borderRadius: 2,
-              bgcolor: theme.palette.primary.lighter,
-              border: `1px solid ${theme.palette.primary.light}`,
+              bgcolor: 'primary.lighter',
+              border: `1px solid`,
+              borderColor: 'primary.light',
+              ...theme.applyStyles('dark', {
+                bgcolor: 'primary.darker',
+                borderColor: 'primary.dark',
+              }),
             })}
           >
             <Typography variant="subtitle2" sx={{ mb: 2, fontWeight: 600 }}>

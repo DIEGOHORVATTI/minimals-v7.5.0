@@ -318,8 +318,12 @@ export function CreditoPlanoPagamento({
           sx={(theme) => ({
             p: 2.5,
             borderRadius: 2,
-            bgcolor: theme.palette.primary.lighter,
-            border: `1px dashed ${theme.palette.primary.main}`,
+            bgcolor: 'primary.lighter',
+            border: `1px dashed`,
+            borderColor: 'primary.main',
+            ...theme.applyStyles('dark', {
+              bgcolor: 'primary.darker',
+            }),
           })}
         >
           <Stack spacing={1.5}>
@@ -385,8 +389,14 @@ export function CreditoPlanoPagamento({
                     sx={(theme) => ({
                       bgcolor:
                         parcela.status === 'proxima'
-                          ? theme.palette.primary.lighter
+                          ? 'primary.lighter'
                           : 'transparent',
+                      ...theme.applyStyles('dark', {
+                        bgcolor:
+                          parcela.status === 'proxima'
+                            ? 'primary.darker'
+                            : 'transparent',
+                      }),
                     })}
                   >
                     <TableCell>

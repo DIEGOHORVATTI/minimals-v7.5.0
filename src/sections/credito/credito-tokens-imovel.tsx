@@ -67,8 +67,11 @@ export function CreditoTokensImovel({
             sx={(theme) => ({
               p: 1.5,
               borderRadius: 2,
-              bgcolor: theme.palette.primary.lighter,
-              color: theme.palette.primary.main,
+              bgcolor: 'primary.lighter',
+              color: 'primary.main',
+              ...theme.applyStyles('dark', {
+                bgcolor: 'primary.darker',
+              }),
             })}
           >
             <Iconify icon="solar:home-2-outline" width={32} />
@@ -89,8 +92,9 @@ export function CreditoTokensImovel({
           sx={(theme) => ({
             p: 3,
             borderRadius: 2,
-            bgcolor: theme.palette.background.paper,
-            border: `1px solid ${theme.palette.divider}`,
+            bgcolor: 'background.paper',
+            border: `1px solid`,
+            borderColor: 'divider',
           })}
         >
           <Stack spacing={2}>
@@ -98,7 +102,7 @@ export function CreditoTokensImovel({
               <Typography variant="body2" color="text.secondary">
                 Valor do imóvel
               </Typography>
-              <Typography variant="h6" fontWeight={600}>
+              <Typography variant="h6" fontWeight={600} color="text.primary">
                 {fCurrencyBR(valorImovel)}
               </Typography>
             </Stack>
@@ -123,15 +127,18 @@ export function CreditoTokensImovel({
           <LinearProgress
             variant="determinate"
             value={(tokensQuitados / percentualTokens) * 100}
-            sx={{
+            sx={(theme) => ({
               height: 10,
               borderRadius: 5,
               bgcolor: 'grey.300',
+              ...theme.applyStyles('dark', {
+                bgcolor: 'grey.700',
+              }),
               '& .MuiLinearProgress-bar': {
                 borderRadius: 5,
                 bgcolor: 'primary.main',
               },
-            }}
+            })}
           />
 
           <Stack direction="row" justifyContent="space-between" sx={{ mt: 1 }}>
@@ -159,7 +166,8 @@ export function CreditoTokensImovel({
             sx={(theme) => ({
               p: 2,
               borderRadius: 2,
-              border: `2px solid ${theme.palette.divider}`,
+              border: `2px solid`,
+              borderColor: 'divider',
             })}
           >
             <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
@@ -183,7 +191,8 @@ export function CreditoTokensImovel({
             sx={(theme) => ({
               p: 2,
               borderRadius: 2,
-              border: `2px solid ${theme.palette.divider}`,
+              border: `2px solid`,
+              borderColor: 'divider',
             })}
           >
             <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
@@ -209,7 +218,8 @@ export function CreditoTokensImovel({
           sx={(theme) => ({
             p: 2,
             borderRadius: 2,
-            border: `1px dashed ${theme.palette.divider}`,
+            border: `1px dashed`,
+            borderColor: 'divider',
           })}
         >
           <Stack direction="row" spacing={1.5}>

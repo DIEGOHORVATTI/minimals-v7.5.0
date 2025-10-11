@@ -39,8 +39,11 @@ export function CreditoWallet({ limiteTotal, saldoDisponivel, saldoUtilizado }: 
             sx={(theme) => ({
               p: 2,
               borderRadius: 2,
-              bgcolor: theme.palette.primary.lighter,
-              color: theme.palette.primary.main,
+              bgcolor: 'primary.lighter',
+              color: 'primary.main',
+              ...theme.applyStyles('dark', {
+                bgcolor: 'primary.darker',
+              }),
             })}
           >
             <Iconify icon="solar:bill-list-bold-duotone" width={40} />
@@ -108,15 +111,18 @@ export function CreditoWallet({ limiteTotal, saldoDisponivel, saldoUtilizado }: 
           <LinearProgress
             variant="determinate"
             value={percentualUsado}
-            sx={{
+            sx={(theme) => ({
               height: 8,
               borderRadius: 4,
               bgcolor: 'grey.300',
+              ...theme.applyStyles('dark', {
+                bgcolor: 'grey.700',
+              }),
               '& .MuiLinearProgress-bar': {
                 borderRadius: 4,
                 bgcolor: 'primary.main',
               },
-            }}
+            })}
           />
         </Box>
 

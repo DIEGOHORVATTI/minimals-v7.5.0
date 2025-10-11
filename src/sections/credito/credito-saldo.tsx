@@ -53,8 +53,11 @@ export function CreditoSaldo({ saldoAtual, saldoDisponivel }: CreditoSaldoProps)
             sx={(theme) => ({
               p: 2,
               borderRadius: 2,
-              bgcolor: theme.palette.primary.lighter,
-              color: theme.palette.primary.main,
+              bgcolor: 'primary.lighter',
+              color: 'primary.main',
+              ...theme.applyStyles('dark', {
+                bgcolor: 'primary.darker',
+              }),
             })}
           >
             <Iconify icon="solar:bill-list-bold-duotone" width={32} />
@@ -74,15 +77,18 @@ export function CreditoSaldo({ saldoAtual, saldoDisponivel }: CreditoSaldoProps)
           <LinearProgress
             variant="determinate"
             value={percentualUsado}
-            sx={{
+            sx={(theme) => ({
               height: 8,
               borderRadius: 4,
               bgcolor: 'grey.200',
+              ...theme.applyStyles('dark', {
+                bgcolor: 'grey.700',
+              }),
               '& .MuiLinearProgress-bar': {
                 borderRadius: 4,
                 background: 'linear-gradient(90deg, #8E33FF 0%, #00A76F 100%)',
               },
-            }}
+            })}
           />
         </Box>
 
@@ -101,8 +107,13 @@ export function CreditoSaldo({ saldoAtual, saldoDisponivel }: CreditoSaldoProps)
             sx={(theme) => ({
               p: 2,
               borderRadius: 2,
-              bgcolor: theme.palette.grey[50],
-              border: `1px solid ${theme.palette.grey[200]}`,
+              bgcolor: 'grey.50',
+              border: `1px solid`,
+              borderColor: 'grey.200',
+              ...theme.applyStyles('dark', {
+                bgcolor: 'grey.800',
+                borderColor: 'grey.700',
+              }),
             })}
           >
             <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
@@ -117,8 +128,13 @@ export function CreditoSaldo({ saldoAtual, saldoDisponivel }: CreditoSaldoProps)
             sx={(theme) => ({
               p: 2,
               borderRadius: 2,
-              bgcolor: theme.palette.grey[50],
-              border: `1px solid ${theme.palette.grey[200]}`,
+              bgcolor: 'grey.50',
+              border: `1px solid`,
+              borderColor: 'grey.200',
+              ...theme.applyStyles('dark', {
+                bgcolor: 'grey.800',
+                borderColor: 'grey.700',
+              }),
             })}
           >
             <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>

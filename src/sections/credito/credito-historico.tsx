@@ -164,12 +164,18 @@ export function CreditoHistorico({
               <Stack direction="row" alignItems="center" spacing={2}>
                 {/* Ícone do tipo */}
                 <Box
-                  sx={(theme) => ({
-                    p: 1,
-                    borderRadius: 1.5,
-                    bgcolor: theme.palette[getTipoColor(transacao.tipo)].lighter,
-                    color: theme.palette[getTipoColor(transacao.tipo)].main,
-                  })}
+                  sx={(theme) => {
+                    const tipoColor = getTipoColor(transacao.tipo);
+                    return {
+                      p: 1,
+                      borderRadius: 1.5,
+                      bgcolor: `${tipoColor}.lighter`,
+                      color: `${tipoColor}.main`,
+                      ...theme.applyStyles('dark', {
+                        bgcolor: `${tipoColor}.darker`,
+                      }),
+                    };
+                  }}
                 >
                   <Iconify icon={getTipoIcon(transacao.tipo)} width={20} />
                 </Box>

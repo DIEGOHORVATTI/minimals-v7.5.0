@@ -58,8 +58,11 @@ export function CreditoDivida({
             sx={(theme) => ({
               p: 1.5,
               borderRadius: 2,
-              bgcolor: theme.palette.primary.lighter,
-              color: theme.palette.primary.main,
+              bgcolor: 'primary.lighter',
+              color: 'primary.main',
+              ...theme.applyStyles('dark', {
+                bgcolor: 'primary.darker',
+              }),
             })}
           >
             <Iconify icon="solar:bill-list-bold-duotone" width={32} />
@@ -81,8 +84,13 @@ export function CreditoDivida({
           sx={(theme) => ({
             p: 2.5,
             borderRadius: 2,
-            bgcolor: theme.palette.primary.lighter,
-            border: `2px solid ${theme.palette.primary.light}`,
+            bgcolor: 'primary.lighter',
+            border: `2px solid`,
+            borderColor: 'primary.light',
+            ...theme.applyStyles('dark', {
+              bgcolor: 'primary.darker',
+              borderColor: 'primary.dark',
+            }),
           })}
         >
           <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
@@ -148,15 +156,18 @@ export function CreditoDivida({
               <LinearProgress
                 variant="determinate"
                 value={percentualPago}
-                sx={{
+                sx={(theme) => ({
                   height: 6,
                   borderRadius: 3,
                   bgcolor: 'grey.300',
+                  ...theme.applyStyles('dark', {
+                    bgcolor: 'grey.700',
+                  }),
                   '& .MuiLinearProgress-bar': {
                     borderRadius: 3,
                     bgcolor: 'primary.main',
                   },
-                }}
+                })}
               />
             </Box>
 

@@ -147,13 +147,17 @@ export function CadastroView() {
           <Alert
             severity="success"
             icon={<Iconify icon="solar:file-text-bold" />}
-            sx={{
+            sx={(theme) => ({
               bgcolor: 'primary.lighter',
               color: 'primary.darker',
+              ...theme.applyStyles('dark', {
+                color: 'primary.lighter',
+                bgcolor: 'primary.darker',
+              }),
               '& .MuiAlert-icon': {
                 color: 'primary.main',
               },
-            }}
+            })}
           >
             <Stack spacing={1}>
               <Typography variant="subtitle2" fontWeight={600}>
@@ -178,18 +182,24 @@ export function CadastroView() {
               <Stack spacing={2}>
                 <Card
                   variant="outlined"
-                  sx={{
+                  sx={(theme) => ({
                     p: 2,
                     cursor: 'pointer',
                     border: hasMatricula === 'sim' ? 2 : 1,
                     borderColor: hasMatricula === 'sim' ? 'primary.main' : 'divider',
                     bgcolor: hasMatricula === 'sim' ? 'primary.lighter' : 'transparent',
+                    ...theme.applyStyles('dark', {
+                      bgcolor: hasMatricula === 'sim' ? 'primary.darker' : 'transparent',
+                    }),
                     transition: 'all 0.2s',
                     '&:hover': {
                       borderColor: 'primary.main',
                       bgcolor: 'primary.lighter',
+                      ...theme.applyStyles('dark', {
+                        bgcolor: 'primary.darker',
+                      }),
                     },
-                  }}
+                  })}
                   onClick={() => setHasMatricula('sim')}
                 >
                   <FormControlLabel
@@ -211,18 +221,24 @@ export function CadastroView() {
 
                 <Card
                   variant="outlined"
-                  sx={{
+                  sx={(theme) => ({
                     p: 2,
                     cursor: 'pointer',
                     border: hasMatricula === 'nao' ? 2 : 1,
                     borderColor: hasMatricula === 'nao' ? 'primary.main' : 'divider',
                     bgcolor: hasMatricula === 'nao' ? 'primary.lighter' : 'transparent',
+                    ...theme.applyStyles('dark', {
+                      bgcolor: hasMatricula === 'nao' ? 'primary.darker' : 'transparent',
+                    }),
                     transition: 'all 0.2s',
                     '&:hover': {
                       borderColor: 'primary.main',
                       bgcolor: 'primary.lighter',
+                      ...theme.applyStyles('dark', {
+                        bgcolor: 'primary.darker',
+                      }),
                     },
-                  }}
+                  })}
                   onClick={() => setHasMatricula('nao')}
                 >
                   <FormControlLabel
